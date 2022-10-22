@@ -14,6 +14,7 @@ class RankFormField extends StatelessWidget {
         prefixIcon: Icon(Icons.looks_two_outlined),
       ),
       validator: CustomValidator.siralama,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: rankController,
     );
   }

@@ -30,43 +30,36 @@ class _TercihGorGonderState extends State<TercihGorGonder>
     return Card(
       child: Container(
         padding: const EdgeInsets.all(12),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            ValueListenableBuilder<AuthController>(
-              valueListenable: AuthController(),
-              builder: (context, value, child) {
-                final kadroList = value.firstKadroList ?? <KadroModel>[];
+        child: ValueListenableBuilder<AuthController>(
+          valueListenable: AuthController(),
+          builder: (context, value, child) {
+            final kadroList = value.firstKadroList ?? <KadroModel>[];
 
-                return ValueListenableBuilder<List<String?>>(
-                  valueListenable: model,
-                  builder: (context, value, child) =>
-                      ReorderableListView.builder(
-                    key: GlobalKey(),
-                    shrinkWrap: true,
-                    itemCount: value.length,
-                    buildDefaultDragHandles: false,
-                    itemBuilder: (context, index) {
-                      final kadro = kadroList.firstWhere(
-                        (e) => e.kadroId == value.elementAt(index),
-                      );
-                      return TercihReorderItem(
-                        key: ValueKey(kadro),
-                        indexValue: kadro,
-                        model: model,
-                        index: index,
-                        first: index == 0,
-                        last: index == (value.length - 1),
-                      );
-                    },
-                    onReorder: (oldIndex, newIndex) => context
-                        .loading(model.tercihReorder(oldIndex, newIndex)),
-                  ),
-                );
-              },
-            ),
-            ElevatedButton(onPressed: () {}, child: const Text('Güncelle')),
-          ],
+            return ValueListenableBuilder<List<String?>>(
+              valueListenable: model,
+              builder: (context, value, child) => ReorderableListView.builder(
+                key: GlobalKey(),
+                shrinkWrap: true,
+                itemCount: value.length,
+                buildDefaultDragHandles: false,
+                itemBuilder: (context, index) {
+                  final kadro = kadroList.firstWhere(
+                    (e) => e.kadroId == value.elementAt(index),
+                  );
+                  return TercihReorderItem(
+                    key: ValueKey(kadro),
+                    indexValue: kadro,
+                    model: model,
+                    index: index,
+                    first: index == 0,
+                    last: index == (value.length - 1),
+                  );
+                },
+                onReorder: (oldIndex, newIndex) =>
+                    context.loading(model.tercihReorder(oldIndex, newIndex)),
+              ),
+            );
+          },
         ),
       ),
     );

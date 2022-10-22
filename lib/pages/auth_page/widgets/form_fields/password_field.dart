@@ -27,6 +27,7 @@ class PasswordFormField extends StatelessWidget {
         return TextFormField(
           controller: _passwordController,
           validator: CustomValidator.password,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           textInputAction: TextInputAction.done,
           onFieldSubmitted: onFieldSubmitted,
           obscuringCharacter: obscuringCharacter2,

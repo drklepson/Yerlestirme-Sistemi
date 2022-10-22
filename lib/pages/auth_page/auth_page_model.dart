@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:yerlestirme_update/controllers/auth_controller.dart';
 import 'package:yerlestirme_update/helpers/extensions/extension.dart';
+import 'package:yerlestirme_update/helpers/global_variables.dart';
+import 'package:yerlestirme_update/helpers/validators/validator.dart';
+import 'package:yerlestirme_update/utility/widgets/alert_dialog.dart';
 
 class AuthPageModel {
   AuthPageModel() {
     userExist = authController.firestoreUser != null;
   }
   late final bool userExist;
-  final authController = AuthController.to;
+  final authController = AuthController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
@@ -24,51 +27,85 @@ class AuthPageModel {
     sehirController.dispose();
   }
 
-  void showResetPasswordDialog() {
-    // Validator().email(emailController.text) == null &&
-    //         emailController.text != ''
-    //     ? Get.defaultDialog<void>(
-    //         title: 'Şifre Sıfırlama',
-    //         titlePadding: const EdgeInsets.all(16),
-    //         contentPadding: const EdgeInsets.all(16),
-    //         content: Text(
-    //           // ignore: lines_longer_than_80_chars
-    //           'Sıfırlama istediğiniz gönderileceği adres: \n ${emailController.text}',
-    //           textAlign: TextAlign.center,
-    //         ),
-    //         textCancel: 'Vazgeç',
-    //         textConfirm: 'Gönder',
-    //         onCancel: Get.back<void>,
-    //         onConfirm: () {
-    //           authController.resetPassword(emailController.text);
-    //           Get.back<void>();
-    //         },
-    //       )
-    //     : Get.bottomSheet<void>(
-    //         BottomSheet(
-    //           onClosing: () {},
-    //           builder: (context) {
-    //             return const Text('E-posta adresinizi kontrol ediniz.');
-    //           },
-    //         ),
-    //      );
+  void showResetPasswordDialog(BuildContext context) {
+    CustomValidator.email(emailController.text) == null &&
+            emailController.text != ''
+        ? showDialog<void>(
+            context: context,
+            builder: (dialogContext) => CustomAlertDialog(
+              titleText: 'Şifre Sıfırlama',
+              content: Text(
+                '''
+Sıfırlama istediğiniz gönderileceği adres: 
+${emailController.text}''',
+                textAlign: TextAlign.center,
+              ),
+              actions: [
+                ElevatedButton(
+                  onPressed: () {
+                    context
+                        .loading(
+                      AuthController().resetPassword(emailController.text),
+                    )
+                        .then((_) {
+                      dialogContext.pop();
+                      showDialog<void>(
+                        context: context,
+                        builder: (successContext) => CustomAlertDialog(
+                          titleText: 'Başarılı',
+                          // ignore: prefer_const_constructors
+                          content: Text(
+                            '''
+Şifre sıfırlama bağlantısı gönderildi
+Lütfen e-postanızı ve spam klasörünü konrol edin.''',
+                            textAlign: TextAlign.center,
+                          ),
+                          actions: [
+                            ElevatedButton(
+                              onPressed: successContext.pop,
+                              child: const Text('Kapat'),
+                            )
+                          ],
+                        ),
+                      );
+                    }).onError(
+                      (error, _) {
+                        Globals.errorBottomSheet(context, error);
+                        return null;
+                      },
+                    );
+                  },
+                  child: const Text('Onayla'),
+                ),
+                OutlinedButton(
+                  onPressed: dialogContext.pop,
+                  child: const Text('Vazgeç'),
+                )
+              ],
+            ),
+          )
+        : Globals.errorBottomSheet(context, 'Geçerli Bir Email Giriniz');
   }
 
   Future<void> signIn(BuildContext context) async {
     await context
         .loading(
-      AuthController.to.signIn(
+      AuthController().signIn(
         context,
         emailController.text,
         passwordController.text,
       ),
     )
-        .whenComplete(() {
-      if (AuthController.to.firebaseUser == null) {
-      } else {
+        .then((value) {
+      if (value != null) {
         context.pushNamedAndRemoveAll('/home');
       }
-    });
+    }).onError(
+      (error, stackTrace) {
+        Globals.errorBottomSheet(context, error);
+        return null;
+      },
+    );
   }
 
   Future<void> registerFunction(
@@ -79,20 +116,26 @@ class AuthPageModel {
     final sira = int.tryParse(rankController.text);
     if ((formKey.currentState?.validate() ?? false) &&
         puan != null &&
-        sira != null) {
-      await context.loading(
-        authController.register(
-          context,
-          email: emailController.text,
-          password: passwordController.text,
-          name: nameController.text,
-          puan: puan,
-          sehir: sehirController.text,
-          sira: sira,
-        ),
-      );
-    } else {
-      print('Giriş Hatası');
-    }
+        sira != null &&
+        emailController.text.isNotEmpty &&
+        passwordController.text.isNotEmpty &&
+        nameController.text.isNotEmpty &&
+        sehirController.text.isNotEmpty) {
+      await context
+          .loading(
+            authController.register(
+              context,
+              email: emailController.text,
+              password: passwordController.text,
+              name: nameController.text,
+              puan: puan,
+              sehir: sehirController.text,
+              sira: sira,
+            ),
+          )
+          .onError(
+            (error, stackTrace) => Globals.errorBottomSheet(context, error),
+          );
+    } else {}
   }
 }

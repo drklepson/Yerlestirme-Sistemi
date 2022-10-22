@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:yerlestirme_update/helpers/extensions/extension.dart';
 import 'package:yerlestirme_update/utility/widgets/circuler_prog_ind.dart';
 
 class Globals {
@@ -18,14 +19,6 @@ class Globals {
         power ?? 5,
         (index) => const BoxShadow(color: Colors.white, blurRadius: 2),
       );
-
-  static final List<TextStyle> fontStyles = [
-    GoogleFonts.baloo2(),
-    GoogleFonts.lobster(),
-    GoogleFonts.righteous(),
-    GoogleFonts.arimaMadurai(),
-    GoogleFonts.boogaloo()
-  ];
 
   static Widget futureBuilderWidget<T>(
     BuildContext context,
@@ -49,5 +42,30 @@ class Globals {
 
         return const Center(child: CustomCircularIndicator());
     }
+  }
+
+  static Future<void> launchUrlFunc(Uri url) async {
+    if (!await launchUrl(url)) {
+      throw ArgumentError('Could not launch $url');
+    }
+  }
+
+  static Future<void> errorBottomSheet(BuildContext context, Object? error) {
+    return showModalBottomSheet(
+      context: context,
+      useSafeArea: true,
+      constraints: const BoxConstraints(maxWidth: 360),
+      isDismissible: false,
+      builder: (bottomContext) {
+        Future.delayed(
+          const Duration(seconds: 3),
+          () => bottomContext.pop(),
+        );
+        return Padding(
+          padding: const EdgeInsets.all(12),
+          child: Text(error.toString()),
+        );
+      },
+    );
   }
 }

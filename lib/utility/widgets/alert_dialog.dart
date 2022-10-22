@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:yerlestirme_update/helpers/extensions/extension.dart';
 
@@ -23,7 +25,7 @@ class CustomAlertDialog extends StatelessWidget {
       contentPadding: edgeInsets,
       actionsPadding: edgeInsets,
       title: SizedBox(
-        width: context.width * 0.8,
+        width: math.min(context.width * 0.8, 360),
         child: Row(
           children: [
             Expanded(

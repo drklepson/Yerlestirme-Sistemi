@@ -13,27 +13,22 @@ class KadroService {
 
   Query kadroQuery(UserModel? userModel) => _realDb
       .ref('kadrolist')
-      .orderByChild('İl')
+      .orderByChild('sehir')
       .equalTo(userModel?.sehir ?? 'abcabc');
 
+  List<KadroModel>? getKadroList(DatabaseEvent event) {
+    final mapOfSnap = event.snapshot.value as Map<String, dynamic>?;
+    mapOfSnap?.map<String, Map<String, dynamic>>(
+      (key, value) => MapEntry(key, value as Map<String, dynamic>),
+    );
+    return mapOfSnap?.values
+        .map((e) => KadroModel.fromJson(map: e as Map<String, dynamic>))
+        .toList();
+  }
+
   Future<List<KadroModel>?> futureKadroList(UserModel? userModel) =>
-      kadroQuery(userModel).once().then<List<KadroModel>?>((event) {
-        final mapOfSnap = event.snapshot.value as Map<String, dynamic>?;
-        mapOfSnap?.map<String, Map<String, dynamic>>(
-          (key, value) => MapEntry(key, value as Map<String, dynamic>),
-        );
-        print(mapOfSnap?.length);
-        return mapOfSnap?.values
-            .map((e) => KadroModel.fromJson(map: e as Map<String, dynamic>))
-            .toList();
-      });
+      kadroQuery(userModel).once().then<List<KadroModel>?>(getKadroList);
 
   Stream<List<KadroModel>?> streamKadrList(UserModel? userModel) =>
-      kadroQuery(userModel).onValue.map<List<KadroModel>?>((event) {
-        final mapOfSnap =
-            event.snapshot.value as Map<String, Map<String, dynamic>>?;
-        return mapOfSnap?.values
-            .map((e) => KadroModel.fromJson(map: e))
-            .toList();
-      });
+      kadroQuery(userModel).onValue.map<List<KadroModel>?>(getKadroList);
 }

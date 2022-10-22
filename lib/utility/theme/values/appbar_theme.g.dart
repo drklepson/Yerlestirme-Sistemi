@@ -13,7 +13,7 @@ class CustomAppbarTheme extends AppBarTheme {
           titleTextStyle: TextStyle(
             fontSize: 26,
             fontWeight: FontWeight.w700,
-            fontFamily: GoogleFonts.balooBhai2().fontFamily,
+            // fontFamily: GoogleFonts.balooBhai2().fontFamily,
             color: colorScheme.onPrimary,
           ),
           iconTheme:

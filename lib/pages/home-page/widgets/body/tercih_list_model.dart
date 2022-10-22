@@ -5,7 +5,7 @@ import 'package:yerlestirme_update/models/kadro.dart';
 class TercihListModel extends ChangeNotifier
     implements ValueListenable<List<String?>> {
   TercihListModel() {
-    tercihValueList = AuthController.to.firestoreUser?.tercihList ?? [];
+    tercihValueList = AuthController().firestoreUser?.tercihList ?? [];
   }
 
   List<String?> tercihValueList = [];
@@ -33,8 +33,8 @@ class TercihListModel extends ChangeNotifier
   }
 
   Future<void> saveAndNotiy() async {
-    AuthController.to.firestoreUser?.tercihList = tercihValueList;
-    await AuthController.to.firestoreUser?.tercihGonder();
+    AuthController().firestoreUser?.tercihList = tercihValueList;
+    await AuthController().firestoreUser?.tercihGonder();
     notifyListeners();
   }
 

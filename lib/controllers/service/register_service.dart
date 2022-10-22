@@ -23,28 +23,28 @@ class RegisterService {
     required double puan,
     required int sira,
   }) async {
-    await _auth
-        .createUserWithEmailAndPassword(email: email, password: password)
-        .then((result) async {
-          final userData = result.user;
-          if (userData != null) {
-            await _createUserRealDatabase(
-              UserModel(
-                uid: userData.uid,
-                email: email,
-                name: name,
-                sehir: turkish.toUpperCase(sehir),
-                puan: puan,
-                sira: sira,
-              ),
-              result.user!,
-            );
-          }
-        })
-        .whenComplete(() => context.pushNamedAndRemoveAll('/home'))
-        .onError((error, stackTrace) {
-          print(error);
-        });
+    try {
+      await _auth
+          .createUserWithEmailAndPassword(email: email, password: password)
+          .then((result) async {
+        final userData = result.user;
+        if (userData != null) {
+          await _createUserRealDatabase(
+            UserModel(
+              uid: userData.uid,
+              email: email,
+              name: name,
+              sehir: turkish.toUpperCase(sehir),
+              puan: puan,
+              sira: sira,
+            ),
+            result.user!,
+          ).whenComplete(() => context.pushNamedAndRemoveAll('/home'));
+        }
+      });
+    } catch (e) {
+      rethrow;
+    }
   }
 
   Future<void> _createUserRealDatabase(

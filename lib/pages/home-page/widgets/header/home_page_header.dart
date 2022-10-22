@@ -28,7 +28,7 @@ class HomePageHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       constraints: const BoxConstraints(maxWidth: 960),
-      height: ScreenController.isMobile(context) ? 86 : 136,
+      height: ScreenController.isMobile(context) ? 96 : 136,
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: ValueListenableBuilder<AuthController>(
         valueListenable: AuthController(),
@@ -47,6 +47,9 @@ class _HomePageHeader extends StatelessWidget {
     const radius = Radius.circular(20);
     const borderRadius2 = BorderRadius.vertical(bottom: radius);
     const edgeInsets = EdgeInsets.only(bottom: 16);
+    final style2 = ScreenController.isMobile(context)
+        ? Theme.of(context).textTheme.bodyMedium
+        : Theme.of(context).textTheme.titleMedium;
     final nameArea = Text(
       user?.name ?? 'Hata: İsim Alınamadı',
       maxLines: 1,
@@ -64,17 +67,14 @@ class _HomePageHeader extends StatelessWidget {
         final kazanilanKadro = kadroList.firstWhereNull(
           (element) =>
               element?.kadroId ==
-              (AuthController.to.firestoreUser?.kazanilan ?? 'abc'),
+              (AuthController().firestoreUser?.kazanilan ?? 'abc'),
         );
 
         return Text(
           kazanilanKadro?.kurum ?? DefaultStrings.yerlesemediniz,
           maxLines: 1,
-          style: ScreenController.isDekstop(context)
-              ? Theme.of(context).textTheme.headlineSmall
-              : ScreenController.isTablet(context)
-                  ? Theme.of(context).textTheme.titleLarge
-                  : Theme.of(context).textTheme.labelSmall,
+          overflow: TextOverflow.ellipsis,
+          style: style2,
         );
       },
     );
@@ -84,19 +84,12 @@ class _HomePageHeader extends StatelessWidget {
       children: [
         Text(
           'Puan: ${user?.puan ?? DefaultStrings.defaultPuan}',
-          style: ScreenController.isDekstop(context)
-              ? Theme.of(context).textTheme.headlineSmall
-              : ScreenController.isTablet(context)
-                  ? Theme.of(context).textTheme.titleLarge
-                  : Theme.of(context).textTheme.labelSmall,
+          style: style2,
         ),
+        const SizedBox(width: 16),
         Text(
           'G. Sıra:  ${user?.sira ?? DefaultStrings.defaultSira}',
-          style: ScreenController.isDekstop(context)
-              ? Theme.of(context).textTheme.headlineSmall
-              : ScreenController.isTablet(context)
-                  ? Theme.of(context).textTheme.titleLarge
-                  : Theme.of(context).textTheme.labelSmall,
+          style: style2,
         ),
       ],
     );
@@ -110,18 +103,24 @@ class _HomePageHeader extends StatelessWidget {
         children: [
           PlakaHalkasi(sehir: user?.sehir),
           Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                nameArea,
-                kazanilanValueListenable,
-                scoreRankArea,
-              ],
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    nameArea,
+                    kazanilanValueListenable,
+                    scoreRankArea,
+                  ],
+                ),
+              ),
             ),
           ),
           IconButton(
-            onPressed: () =>
-                context.loading(AuthController.to.signOut(context)),
+            onPressed: () => context
+                .loading(AuthController().signOut(context))
+                .then((_) => context.pushNamedAndRemoveAll('/')),
             icon: Icon(
               Icons.exit_to_app_outlined,
               color: context.colorScheme.onPrimary,

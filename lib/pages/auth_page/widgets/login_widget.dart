@@ -41,6 +41,10 @@ class GirisMainWidget extends StatelessWidget {
                   maxLines: 1,
                 ),
               ),
+              TextButton(
+                onPressed: () => model.showResetPasswordDialog(context),
+                child: const Text('Şifremi Unuttum'),
+              )
             ].itemPadding(const EdgeInsets.all(8)),
           ),
         ),

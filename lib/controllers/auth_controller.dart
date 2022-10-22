@@ -3,7 +3,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 import 'package:yerlestirme_update/controllers/service/auth_service.dart';
 import 'package:yerlestirme_update/controllers/service/data_service.dart';
 import 'package:yerlestirme_update/controllers/service/kadro_service.dart';
@@ -13,7 +12,11 @@ import 'package:yerlestirme_update/models/user.dart';
 
 class AuthController extends ChangeNotifier
     implements ValueListenable<AuthController> {
-  factory AuthController() => AuthController._init();
+  factory AuthController() {
+    if (_controller != null) return _controller!;
+    _controller = AuthController._init();
+    return _controller!;
+  }
 
   AuthController._init() {
     _auth = FirebaseAuth.instance;
@@ -23,10 +26,9 @@ class AuthController extends ChangeNotifier
     _dataService = DataService();
 
     authState.listen((userEvent) async {
-      print('object');
       firebaseUser = userEvent;
       if (firebaseUser != null) {
-        await handleAuthChanged(firebaseUser);
+        await handleAuthChanged(firebaseUser!);
 
         _dataService.streamUser(firebaseUser!).listen((userModelEvent) {
           firestoreUser = userModelEvent;
@@ -36,29 +38,30 @@ class AuthController extends ChangeNotifier
         await _kadroService
             .futureKadroList(firestoreUser)
             .then((kadroModelValue) {
-          print('object3');
-          print(kadroModelValue);
           return firstKadroList = kadroModelValue;
         });
 
         _kadroService.streamKadrList(firestoreUser).listen((kadroModelEvent) {
-          print(kadroModelEvent);
           firstKadroList = kadroModelEvent;
         });
       }
       notifyListeners();
     });
   }
+  static AuthController? _controller;
 
-  static AuthController get to => GetIt.I.get<AuthController>();
-
-  Future<void> firstInit() async {
-    firebaseUser = await _auth.authStateChanges().first;
-    if (firebaseUser != null) {
-      await handleAuthChanged(firebaseUser);
-      await _kadroService
-          .futureKadroList(firestoreUser)
-          .then((value) => firstKadroList = value);
+  Future<bool> firstInit() async {
+    try {
+      firebaseUser = await _auth.authStateChanges().first;
+      if (firebaseUser != null) {
+        await handleAuthChanged(firebaseUser!);
+        await _kadroService
+            .futureKadroList(firestoreUser)
+            .then((value) => firstKadroList = value);
+      }
+      return true;
+    } catch (e) {
+      return false;
     }
   }
 
@@ -77,14 +80,28 @@ class AuthController extends ChangeNotifier
 
   Stream<User?> get authState => _auth.authStateChanges();
 
-  Future<User?> signIn(
+  Future<bool> signIn(
     BuildContext context,
     String email,
     String password,
-  ) =>
-      _authService.signIn(context, email, password);
+  ) async {
+    return _authService
+        .signIn(context, email, password)
+        .then<bool>((value) async {
+      firebaseUser = value;
+      if (firebaseUser != null) await handleAuthChanged(firebaseUser!);
+      notifyListeners();
+      return firebaseUser == null;
+    });
+  }
 
-  Future<void> signOut(BuildContext context) => _authService.signOut(context);
+  Future<void> signOut(BuildContext context) async {
+    await _authService.signOut(context).then((value) {
+      firebaseUser = null;
+      firestoreUser = null;
+      notifyListeners();
+    });
+  }
 
   Future<void> register(
     BuildContext context, {
@@ -105,26 +122,18 @@ class AuthController extends ChangeNotifier
         sira: sira,
       );
 
-  Future<void> handleAuthChanged(User? firebaseUserLoc) async {
-    if (firebaseUserLoc?.uid != null) {
-      firebaseUser = firebaseUserLoc;
-      firestoreUser = await _dataService.futureUser(firebaseUserLoc!);
-      firstKadroList = await _kadroService.futureKadroList(firestoreUser);
-    }
+  Future<void> handleAuthChanged(User firebaseUserLoc) async {
+    firebaseUser = firebaseUserLoc;
+    firestoreUser = await _dataService.futureUser(firebaseUserLoc);
+    firstKadroList = await _kadroService.futureKadroList(firestoreUser);
   }
 
   Future<void> resetPassword(String em) =>
       _auth.sendPasswordResetEmail(email: em);
 
-  // Future<List<KadroModel>?> get futureKadroList =>
-  //     _kadroService.futureKadroList(firestoreUser);
-
-  // Stream<List<KadroModel>?> get streamKadroList =>
-  //     _kadroService.streamKadrList(firestoreUser);
-
   Future<UserModel?> getUserWithID(String userID) =>
       _dataService.getUserWithID(userID);
 
   @override
-  AuthController get value => to;
+  AuthController get value => AuthController();
 }

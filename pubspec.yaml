@@ -30,6 +30,8 @@ dependencies:
   
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
 
 
   # For Firebase Connections 
@@ -39,6 +41,7 @@ dependencies:
 
   # For Access Services
   get_it: ^7.2.0
+  url_launcher: ^6.1.6
 
   # Class features
   equatable: ^2.0.3
@@ -48,7 +51,7 @@ dependencies:
   reorderables: ^0.4.4
   
   # General Features
-  google_fonts: ^3.0.1
+  # google_fonts: ^3.0.1
   mask_text_input_formatter: ^2.4.0
   turkish: ^0.2.1
 

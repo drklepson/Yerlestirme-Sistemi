@@ -22,7 +22,7 @@ class KadroListExpansionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final kurumText = Text(
       gelenKadro?.kurum ?? '',
-      maxLines: 1,
+      maxLines: 2,
       style: Theme.of(context).textTheme.titleMedium,
     );
     final staticsText = Text(
@@ -45,7 +45,7 @@ class KadroListExpansionItem extends StatelessWidget {
 
             return kazanan != null
                 ? FutureBuilder<UserModel?>(
-                    future: AuthController.to.getUserWithID(kazanan),
+                    future: AuthController().getUserWithID(kazanan),
                     builder: (context, snapshot) =>
                         Globals.futureBuilderWidget<UserModel?>(
                       context,
@@ -74,7 +74,7 @@ class KadroListExpansionItem extends StatelessWidget {
             final tercihEden = tercihEdenler?.elementAt(tercihSira);
             if (tercihEden == null) return const SizedBox.shrink();
             return FutureBuilder<UserModel?>(
-              future: AuthController.to.getUserWithID(tercihEden),
+              future: AuthController().getUserWithID(tercihEden),
               builder: (context, snapshot) =>
                   Globals.futureBuilderWidget<UserModel?>(
                 context,

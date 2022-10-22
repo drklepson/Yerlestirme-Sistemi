@@ -16,6 +16,7 @@ class ScoreFormField extends StatelessWidget {
       ),
       inputFormatters: [CustomFormatters.aPuani],
       validator: CustomValidator.aPuani,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: scoreController,
     );
   }

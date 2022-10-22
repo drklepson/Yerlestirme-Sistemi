@@ -1,0 +1,961 @@
+{"kadrolist":{
+  "100484": {
+    "sira": 40,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Fatih Sultan Mehmet Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "100484"
+  },
+  "108553": {
+    "sira": 32,
+    "sehir": "ISPARTA",
+    "kurum": "Süleyman Demirel Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "ISPARTA, BURDUR"
+    ],
+    "uid": "108553"
+  },
+  "115753": {
+    "sira": 83,
+    "sehir": "TRABZON",
+    "kurum": "SBÜ Trabzon Kanuni Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 4,
+    "basvurabilen": [
+      "TRABZON, GÜMÜŞHANE"
+    ],
+    "uid": "115753"
+  },
+  "132599": {
+    "sira": 59,
+    "sehir": "KARABÜK",
+    "kurum": "Karabük Üniversitesi Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "KARABÜK, KASTAMONU"
+    ],
+    "uid": "132599"
+  },
+  "137799": {
+    "sira": 54,
+    "sehir": "İZMİR",
+    "kurum": "SBÜ Bozyaka Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "İZMİR"
+    ],
+    "uid": "137799"
+  },
+  "143947": {
+    "sira": 58,
+    "sehir": "KAHRAMANMARAŞ",
+    "kurum": "Kahramanmaraş Sütçü İmam Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "KAHRAMANMARAŞ"
+    ],
+    "uid": "143947"
+  },
+  "150310": {
+    "sira": 20,
+    "sehir": "ÇORUM",
+    "kurum": "Hitit Üniversitesi Tıp Erol Olçok Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "ÇORUM"
+    ],
+    "uid": "150310"
+  },
+  "159682": {
+    "sira": 16,
+    "sehir": "BOLU",
+    "kurum": "Bolu Abant İzzet Baysal Üniversitesi İzzet Baysal Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 6,
+    "basvurabilen": [
+      "BOLU"
+    ],
+    "uid": "159682"
+  },
+  "163877": {
+    "sira": 27,
+    "sehir": "ERZURUM",
+    "kurum": "Atatürk Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 13,
+    "basvurabilen": [
+      "ERZURUM, AĞRI, BAYBURT"
+    ],
+    "uid": "163877"
+  },
+  "174593": {
+    "sira": 53,
+    "sehir": "İZMİR",
+    "kurum": "Dokuz Eylül Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "İZMİR"
+    ],
+    "uid": "174593"
+  },
+  "176456": {
+    "sira": 39,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Dr. Lütfi Kırdar Kartal Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 12,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "176456"
+  },
+  "193073": {
+    "sira": 45,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Prof. Dr. Cemil Taşçıoğlu Şehir Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "193073"
+  },
+  "193571": {
+    "sira": 8,
+    "sehir": "ANKARA",
+    "kurum": "SBÜ Dışkapı Yıldırım Beyazıt Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "ANKARA, ÇANKIRI, KIRIKKALE, KIRŞEHİR"
+    ],
+    "uid": "193571"
+  },
+  "195769": {
+    "sira": 73,
+    "sehir": "ORDU",
+    "kurum": "Ordu Üniversitesi Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "ORDU"
+    ],
+    "uid": "195769"
+  },
+  "210619": {
+    "sira": 13,
+    "sehir": "ANTALYA",
+    "kurum": "Akdeniz Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "ANTALYA"
+    ],
+    "uid": "210619"
+  },
+  "231457": {
+    "sira": 48,
+    "sehir": "İSTANBUL",
+    "kurum": "Acıbadem Mehmet Ali Aydınlar Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 4,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "231457"
+  },
+  "250267": {
+    "sira": 1,
+    "sehir": "ADANA",
+    "kurum": "Çukurova Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "ADANA",
+      "OSMANİYE"
+    ],
+    "uid": "250267"
+  },
+  "253932": {
+    "sira": 5,
+    "sehir": "ANKARA",
+    "kurum": "Başkent Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 5,
+    "basvurabilen": [
+      "ANKARA, ÇANKIRI, KIRIKKALE, KIRŞEHİR"
+    ],
+    "uid": "253932"
+  },
+  "260525": {
+    "sira": 86,
+    "sehir": "YOZGAT",
+    "kurum": "Yozgat Bozok Üniversitesi",
+    "tur": "ÜNV.",
+    "kontenjan": 6,
+    "basvurabilen": [
+      "YOZGAT"
+    ],
+    "uid": "260525"
+  },
+  "271989": {
+    "sira": 31,
+    "sehir": "HATAY",
+    "kurum": "Mustafa Kemal Üniversitesi Tayfur Ata Sökmen Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "HATAY"
+    ],
+    "uid": "271989"
+  },
+  "280292": {
+    "sira": 26,
+    "sehir": "ERZİNCAN",
+    "kurum": "Binali Yıldırım Üniversitesi Mengücek Gazi Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 3,
+    "basvurabilen": [
+      "ERZİNCAN"
+    ],
+    "uid": "280292"
+  },
+  "281206": {
+    "sira": 80,
+    "sehir": "TEKİRDAĞ",
+    "kurum": "Namık Kemal Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 6,
+    "basvurabilen": [
+      "TEKİRDAĞ"
+    ],
+    "uid": "281206"
+  },
+  "291302": {
+    "sira": 43,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Haydarpaşa Numune Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 11,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "291302"
+  },
+  "300015": {
+    "sira": 42,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Haseki Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 8,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "300015"
+  },
+  "324076": {
+    "sira": 87,
+    "sehir": "ZONGULDAK",
+    "kurum": "Bülent Ecevit Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 11,
+    "basvurabilen": [
+      "ZONGULDAK, BARTIN"
+    ],
+    "uid": "324076"
+  },
+  "325911": {
+    "sira": 70,
+    "sehir": "MANİSA",
+    "kurum": "Celal Bayar Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "MANİSA"
+    ],
+    "uid": "325911"
+  },
+  "329741": {
+    "sira": 51,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Başakşehir Çam ve Sakura Şehir Hastanesi",
+    "tur": "ŞH.",
+    "kontenjan": 8,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "329741"
+  },
+  "330760": {
+    "sira": 82,
+    "sehir": "TRABZON",
+    "kurum": "Karadeniz Teknik Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "TRABZON, GÜMÜŞHANE"
+    ],
+    "uid": "330760"
+  },
+  "335723": {
+    "sira": 49,
+    "sehir": "İSTANBUL",
+    "kurum": "İstanbul Okan Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 4,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "335723"
+  },
+  "343474": {
+    "sira": 35,
+    "sehir": "İSTANBUL",
+    "kurum": "İstanbul Üniversitesi İstanbul Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 2,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "343474"
+  },
+  "350684": {
+    "sira": 77,
+    "sehir": "SAMSUN",
+    "kurum": "SBÜ Samsun Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "SAMSUN, AMASYA, SİNOP"
+    ],
+    "uid": "350684"
+  },
+  "351877": {
+    "sira": 41,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Gaziosmanpaşa Taksim Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "351877"
+  },
+  "361237": {
+    "sira": 25,
+    "sehir": "ELAZIĞ",
+    "kurum": "Fırat Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "ELAZIĞ, BİNGÖL, TUNCELİ"
+    ],
+    "uid": "361237"
+  },
+  "380067": {
+    "sira": 15,
+    "sehir": "AYDIN",
+    "kurum": "Adnan Menderes Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 6,
+    "basvurabilen": [
+      "AYDIN"
+    ],
+    "uid": "380067"
+  },
+  "381313": {
+    "sira": 7,
+    "sehir": "ANKARA",
+    "kurum": "SBÜ Ankara Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "ANKARA, ÇANKIRI, KIRIKKALE, KIRŞEHİR"
+    ],
+    "uid": "381313"
+  },
+  "389282": {
+    "sira": 12,
+    "sehir": "ANKARA",
+    "kurum": "Ankara Yıldırım Beyazıt Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 18,
+    "basvurabilen": [
+      "ANKARA, ÇANKIRI, KIRIKKALE, KIRŞEHİR"
+    ],
+    "uid": "389282"
+  },
+  "394601": {
+    "sira": 61,
+    "sehir": "KAYSERİ",
+    "kurum": "Erciyes Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "KAYSERİ, NEVŞEHİR, NİĞDE"
+    ],
+    "uid": "394601"
+  },
+  "406563": {
+    "sira": 76,
+    "sehir": "SAMSUN",
+    "kurum": "Ondokuz Mayıs Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "SAMSUN, AMASYA, SİNOP"
+    ],
+    "uid": "406563"
+  },
+  "419901": {
+    "sira": 6,
+    "sehir": "ANKARA",
+    "kurum": "SBÜ Gülhane Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 5,
+    "basvurabilen": [
+      "ANKARA, ÇANKIRI, KIRIKKALE, KIRŞEHİR"
+    ],
+    "uid": "419901"
+  },
+  "422361": {
+    "sira": 28,
+    "sehir": "ESKİŞEHİR",
+    "kurum": "Eskişehir Osmangazi Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 12,
+    "basvurabilen": [
+      "ESKİŞEHİR, BİLECİK"
+    ],
+    "uid": "422361"
+  },
+  "427181": {
+    "sira": 46,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Şişli Hamidiye Etfal Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "427181"
+  },
+  "433165": {
+    "sira": 50,
+    "sehir": "İSTANBUL",
+    "kurum": "Maltepe Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 2,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "433165"
+  },
+  "434147": {
+    "sira": 84,
+    "sehir": "UŞAK",
+    "kurum": "Uşak Üniversitesi Uşak EAH",
+    "tur": "AFİLİYE",
+    "kontenjan": 5,
+    "basvurabilen": [
+      "UŞAK"
+    ],
+    "uid": "434147"
+  },
+  "439422": {
+    "sira": 10,
+    "sehir": "ANKARA",
+    "kurum": "Hacettepe Üniversitesi",
+    "tur": "ÜNV.",
+    "kontenjan": 4,
+    "basvurabilen": [
+      "ANKARA, ÇANKIRI, KIRIKKALE, KIRŞEHİR"
+    ],
+    "uid": "439422"
+  },
+  "447038": {
+    "sira": 52,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ İstanbul Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 3,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "447038"
+  },
+  "452027": {
+    "sira": 24,
+    "sehir": "EDİRNE",
+    "kurum": "Trakya Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 5,
+    "basvurabilen": [
+      "EDİRNE, KIRKLARELİ"
+    ],
+    "uid": "452027"
+  },
+  "459949": {
+    "sira": 75,
+    "sehir": "SAKARYA",
+    "kurum": "Sakarya Üniversitesi Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "SAKARYA"
+    ],
+    "uid": "459949"
+  },
+  "467953": {
+    "sira": 9,
+    "sehir": "ANKARA",
+    "kurum": "SBÜ Ankara Atatürk Sanatoryum Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 5,
+    "basvurabilen": [
+      "ANKARA, ÇANKIRI, KIRIKKALE, KIRŞEHİR"
+    ],
+    "uid": "467953"
+  },
+  "502553": {
+    "sira": 44,
+    "sehir": "İSTANBUL",
+    "kurum": "İstanbul Medeniyet Üniversitesi Göztepe Prof. Dr. Süleyman Yalçın Şehir Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 8,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "502553"
+  },
+  "503348": {
+    "sira": 78,
+    "sehir": "SİVAS",
+    "kurum": "Cumhuriyet Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 12,
+    "basvurabilen": [
+      "SİVAS"
+    ],
+    "uid": "503348"
+  },
+  "509529": {
+    "sira": 85,
+    "sehir": "VAN",
+    "kurum": "Yüzüncü Yıl Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 18,
+    "basvurabilen": [
+      "VAN, BİTLİS, HAKKÂRİ"
+    ],
+    "uid": "509529"
+  },
+  "514081": {
+    "sira": 33,
+    "sehir": "İSTANBUL",
+    "kurum": "Bezmiâlem Vakıf Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 6,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "514081"
+  },
+  "520579": {
+    "sira": 11,
+    "sehir": "ANKARA",
+    "kurum": "SBÜ Ankara Şehir Hastanesi",
+    "tur": "ŞH.",
+    "kontenjan": 20,
+    "basvurabilen": [
+      "ANKARA, ÇANKIRI, KIRIKKALE, KIRŞEHİR"
+    ],
+    "uid": "520579"
+  },
+  "528548": {
+    "sira": 71,
+    "sehir": "MERSİN",
+    "kurum": "Mersin Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "MERSİN"
+    ],
+    "uid": "528548"
+  },
+  "531637": {
+    "sira": 69,
+    "sehir": "MALATYA",
+    "kurum": "İnönü Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 11,
+    "basvurabilen": [
+      "MALATYA"
+    ],
+    "uid": "531637"
+  },
+  "532294": {
+    "sira": "2",
+    "sehir": "ADANA",
+    "kurum": "SBÜ Adana Şehir Hastanesi",
+    "tur": "ŞH.",
+    "kontenjan": "14",
+    "basvurabilen": [
+      "ADANA, OSMANİYE"
+    ],
+    "uid": "532294"
+  },
+  "549681": {
+    "sira": 55,
+    "sehir": "İZMİR",
+    "kurum": "İzmir Kâtip Çelebi Üniversitesi Atatürk Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "İZMİR"
+    ],
+    "uid": "549681"
+  },
+  "563026": {
+    "sira": 19,
+    "sehir": "ÇANAKKALE",
+    "kurum": "Çanakkale Onsekiz Mart Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 6,
+    "basvurabilen": [
+      "ÇANAKKALE"
+    ],
+    "uid": "563026"
+  },
+  "569374": {
+    "sira": 34,
+    "sehir": "İSTANBUL",
+    "kurum": "İstanbul Üniversitesi Cerrahpaşa Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 2,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "569374"
+  },
+  "595088": {
+    "sira": 38,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Bakırköy Dr. Sadi Konuk Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 8,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "595088"
+  },
+  "607175": {
+    "sira": 62,
+    "sehir": "KAYSERİ",
+    "kurum": "Kayseri Şehir Hastanesi",
+    "tur": "ŞH.",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "KAYSERİ, NEVŞEHİR, NİĞDE"
+    ],
+    "uid": "607175"
+  },
+  "628166": {
+    "sira": 64,
+    "sehir": "KONYA",
+    "kurum": "Necmettin Erbakan Üniversitesi Meram Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 6,
+    "basvurabilen": [
+      "KONYA, AKSARAY, KARAMAN"
+    ],
+    "uid": "628166"
+  },
+  "656939": {
+    "sira": 37,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Bağcılar Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 8,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "656939"
+  },
+  "660072": {
+    "sira": 30,
+    "sehir": "GİRESUN",
+    "kurum": "Giresun Üniversitesi Prof. Dr. A. İlhan Özdemir Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 5,
+    "basvurabilen": [
+      "GİRESUN"
+    ],
+    "uid": "660072"
+  },
+  "663237": {
+    "sira": 60,
+    "sehir": "KARS",
+    "kurum": "Kafkas Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "KARS, ARDAHAN, IĞDIR"
+    ],
+    "uid": "663237"
+  },
+  "668230": {
+    "sira": 22,
+    "sehir": "DİYARBAKIR",
+    "kurum": "Dicle Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 27,
+    "basvurabilen": [
+      "DİYARBAKIR, BATMAN, MARDİN, MUŞ, SİİRT, ŞIRNAK"
+    ],
+    "uid": "668230"
+  },
+  "672720": {
+    "sira": 72,
+    "sehir": "MUĞLA",
+    "kurum": "Muğla Sıtkı Koçman Üniversitesi Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "MUĞLA"
+    ],
+    "uid": "672720"
+  },
+  "679247": {
+    "sira": 67,
+    "sehir": "KONYA",
+    "kurum": "SBÜ Konya Beyhekim Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 6,
+    "basvurabilen": [
+      "KONYA, AKSARAY, KARAMAN"
+    ],
+    "uid": "679247"
+  },
+  "681992": {
+    "sira": 47,
+    "sehir": "İSTANBUL",
+    "kurum": "SBÜ Ümraniye Eğitim ve Araştırma Hastanesi",
+    "tur": "ÜNV.",
+    "kontenjan": 8,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "681992"
+  },
+  "695922": {
+    "sira": 57,
+    "sehir": "İZMİR",
+    "kurum": "İzmir Demokrasi Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 3,
+    "basvurabilen": [
+      "İZMİR"
+    ],
+    "uid": "695922"
+  },
+  "699197": {
+    "sira": 36,
+    "sehir": "İSTANBUL",
+    "kurum": "Marmara Üniversitesi Pendik Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "İSTANBUL"
+    ],
+    "uid": "699197"
+  },
+  "718928": {
+    "sira": 65,
+    "sehir": "KONYA",
+    "kurum": "Selçuk Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 5,
+    "basvurabilen": [
+      "KONYA, AKSARAY, KARAMAN"
+    ],
+    "uid": "718928"
+  },
+  "751281": {
+    "sira": 3,
+    "sehir": "AFYONKARAHİSAR",
+    "kurum": "Afyonkarahisar Sağlık Bilimleri Üniversitesi",
+    "tur": "ÜNV.",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "AFYONKARAHİSAR"
+    ],
+    "uid": "751281"
+  },
+  "764402": {
+    "sira": 29,
+    "sehir": "GAZİANTEP",
+    "kurum": "Gaziantep Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 28,
+    "basvurabilen": [
+      "GAZİANTEP, KİLİS"
+    ],
+    "uid": "764402"
+  },
+  "782932": {
+    "sira": 56,
+    "sehir": "İZMİR",
+    "kurum": "SBÜ Tepecik Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 8,
+    "basvurabilen": [
+      "İZMİR"
+    ],
+    "uid": "782932"
+  },
+  "786202": {
+    "sira": 23,
+    "sehir": "DÜZCE",
+    "kurum": "Düzce Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "DÜZCE"
+    ],
+    "uid": "786202"
+  },
+  "792488": {
+    "sira": 63,
+    "sehir": "KOCAELİ",
+    "kurum": "Kocaeli Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 11,
+    "basvurabilen": [
+      "KOCAELİ, YALOVA"
+    ],
+    "uid": "792488"
+  },
+  "801757": {
+    "sira": 18,
+    "sehir": "BURSA",
+    "kurum": "SBÜ Bursa Yüksek İhtisas Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 18,
+    "basvurabilen": [
+      "BURSA, BALIKESİR"
+    ],
+    "uid": "801757"
+  },
+  "817291": {
+    "sira": 79,
+    "sehir": "ŞANLIURFA",
+    "kurum": "Harran Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 18,
+    "basvurabilen": [
+      "ŞANLIURFA, ADIYAMAN"
+    ],
+    "uid": "817291"
+  },
+  "817831": {
+    "sira": 74,
+    "sehir": "RİZE",
+    "kurum": "Recep Tayyip Erdoğan Üniversitesi Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 7,
+    "basvurabilen": [
+      "RİZE, ARTVİN"
+    ],
+    "uid": "817831"
+  },
+  "831178": {
+    "sira": 17,
+    "sehir": "BURSA",
+    "kurum": "Uludağ Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "BURSA, BALIKESİR"
+    ],
+    "uid": "831178"
+  },
+  "834094": {
+    "sira": 68,
+    "sehir": "KÜTAHYA",
+    "kurum": "Kütahya Sağlık Bilimleri Üniversitesi Evliya Çelebi Eğitim ve Araştırma Hastanesi",
+    "tur": "AFİLİYE",
+    "kontenjan": 6,
+    "basvurabilen": [
+      "KÜTAHYA"
+    ],
+    "uid": "834094"
+  },
+  "836435": {
+    "sira": 21,
+    "sehir": "DENİZLİ",
+    "kurum": "Pamukkale Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 8,
+    "basvurabilen": [
+      "DENİZLİ"
+    ],
+    "uid": "836435"
+  },
+  "897027": {
+    "sira": 81,
+    "sehir": "TOKAT",
+    "kurum": "Gaziosmanpaşa Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "TOKAT"
+    ],
+    "uid": "897027"
+  },
+  "948496": {
+    "sira": 66,
+    "sehir": "KONYA",
+    "kurum": "SBÜ Konya Şehir Hastanesi",
+    "tur": "ŞH.",
+    "kontenjan": 10,
+    "basvurabilen": [
+      "KONYA, AKSARAY, KARAMAN"
+    ],
+    "uid": "948496"
+  },
+  "966989": {
+    "sira": 4,
+    "sehir": "ANKARA",
+    "kurum": "Ankara Üniversitesi Tıp Fakültesi",
+    "tur": "ÜNV.",
+    "kontenjan": 5,
+    "basvurabilen": [
+      "ANKARA, ÇANKIRI, KIRIKKALE",
+      "KIRŞEHİR"
+    ],
+    "uid": "966989"
+  },
+  "991940": {
+    "sira": 14,
+    "sehir": "ANTALYA",
+    "kurum": "SBÜ Antalya Eğitim ve Araştırma Hastanesi",
+    "tur": "EAH.",
+    "kontenjan": 9,
+    "basvurabilen": [
+      "ANTALYA"
+    ],
+    "uid": "991940"
+  }
+}}

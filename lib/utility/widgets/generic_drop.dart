@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:turkish/turkish.dart';
 import 'package:yerlestirme_update/helpers/extensions/extension.dart';
 import 'package:yerlestirme_update/helpers/formatters/formatter.dart';
+import 'package:yerlestirme_update/pages/home-page/widgets/header/home_page_header.dart';
 
 class GenericAutoCompDrop<T extends Object> extends StatelessWidget {
   GenericAutoCompDrop({
     super.key,
-    this.onSelected,
+    required this.onSelected,
     this.onClearPressed,
     required this.itemView,
     required this.items,
@@ -16,9 +17,10 @@ class GenericAutoCompDrop<T extends Object> extends StatelessWidget {
     this.errorText = 'Geçerli Bir Seçim Yapınız.',
     this.listWidth,
     required this.labelText,
+    this.controller,
   });
 
-  final void Function(T item)? onSelected;
+  final void Function(T item) onSelected;
   final List<T> items;
   final String Function(T item) toStringMethod;
   final void Function()? onClearPressed;
@@ -26,6 +28,7 @@ class GenericAutoCompDrop<T extends Object> extends StatelessWidget {
   final String errorText;
   final double? listWidth;
   final String labelText;
+  final TextEditingController? controller;
 
   FutureOr<Iterable<T>> optionsBuilder(
     TextEditingValue value,
@@ -42,6 +45,7 @@ class GenericAutoCompDrop<T extends Object> extends StatelessWidget {
 
   String? validator(String? value) {
     final valid = items.any((element) => toStringMethod.call(element) == value);
+    if (valid) onEditingComplete(value);
     return valid ? null : errorText;
   }
 
@@ -51,16 +55,19 @@ class GenericAutoCompDrop<T extends Object> extends StatelessWidget {
   Widget build(BuildContext context) {
     return Autocomplete<T>(
       optionsBuilder: (value) => optionsBuilder(value, items),
-      onSelected: onSelected?.call,
+      onSelected: onSelected.call,
       displayStringForOption: toStringMethod.call,
-      fieldViewBuilder: (_, controller, node, __) => OptionFieldView(
-        key: fieldviewkey,
-        controller: controller,
-        node: node,
-        validator: validator,
-        onClearPressed: onClearPressed,
-        labelText: labelText,
-      ),
+      fieldViewBuilder: (_, localController, node, __) {
+        return OptionFieldView(
+          key: fieldviewkey,
+          controller: localController,
+          node: node,
+          validator: validator,
+          onClearPressed: onClearPressed,
+          labelText: labelText,
+          onEditingComplete: onEditingComplete,
+        );
+      },
       optionsViewBuilder: (context, onSelected, options) => LayoutBuilder(
         builder: (p0, p1) => OptionViews<T>(
           listWidth: listWidth,
@@ -73,6 +80,15 @@ class GenericAutoCompDrop<T extends Object> extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void onEditingComplete(String? value) {
+    final item = items.firstWhereNull(
+      (element) =>
+          turkish.toUpperCase(value ?? '') ==
+          turkish.toUpperCase(toStringMethod.call(element)),
+    );
+    if (item != null) onSelected.call(item);
   }
 }
 
@@ -137,6 +153,7 @@ class OptionFieldView extends StatelessWidget {
     this.validator,
     this.prefixIcon = Icons.location_on_outlined,
     this.labelText = 'Kurum Adı',
+    required this.onEditingComplete,
   });
 
   final TextEditingController controller;
@@ -145,13 +162,19 @@ class OptionFieldView extends StatelessWidget {
   final String? Function(String?)? validator;
   final IconData prefixIcon;
   final String labelText;
+  final void Function(String? value) onEditingComplete;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
       focusNode: node,
+      onChanged: onEditingComplete.call,
+      onFieldSubmitted: onEditingComplete.call,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      onEditingComplete: () => onEditingComplete.call(controller.text),
       inputFormatters: [CustomFormatters.uppercase],
+      onSaved: onEditingComplete.call,
       decoration: InputDecoration(
         labelText: labelText,
         prefixIcon: Icon(prefixIcon),

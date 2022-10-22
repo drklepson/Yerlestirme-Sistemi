@@ -9,15 +9,13 @@ part of 'kadro.dart';
 // **************************************************************************
 
 KadroModel _$KadroModelFromJson(Map<String, dynamic> json) => KadroModel(
-      siraNo: json['Sıra No'] as int,
-      il: json['İl'] as String,
-      kurum: json['Kurum'] as String,
-      tur: json['Tür'] as String,
-      dal: json['Dal'] as String?,
-      sure: json['Süre'] as String?,
-      kontenjan: json['Kontenjan'] as int,
+      sira: json['sira'] as int,
+      sehir: json['sehir'] as String,
+      kurum: json['kurum'] as String,
+      tur: json['tur'] as String,
+      kontenjan: json['kontenjan'] as int,
       kadroId: json['uid'] as String,
-      basvurabilenIller: (json['Başvurabilenler'] as List<dynamic>?)
+      basvurabilen: (json['basvurabilen'] as List<dynamic>?)
           ?.map((e) => e as String?)
           .toList(),
       kazananlar: (json['kazananlar'] as List<dynamic>?)

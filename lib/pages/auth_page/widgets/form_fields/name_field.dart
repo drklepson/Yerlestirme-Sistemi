@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yerlestirme_update/helpers/validators/validator.dart';
 
 class NameFormField extends StatelessWidget {
   const NameFormField({
@@ -14,6 +15,7 @@ class NameFormField extends StatelessWidget {
       controller: nameController,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: TextInputType.name,
+      validator: CustomValidator.name,
       textInputAction: TextInputAction.next,
       decoration: const InputDecoration(
         labelText: 'Ad Soyad',

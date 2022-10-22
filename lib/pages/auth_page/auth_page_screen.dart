@@ -3,6 +3,7 @@ import 'package:yerlestirme_update/helpers/extensions/extension.dart';
 import 'package:yerlestirme_update/pages/auth_page/auth_page_model.dart';
 import 'package:yerlestirme_update/pages/auth_page/widgets/login_widget.dart';
 import 'package:yerlestirme_update/pages/auth_page/widgets/signup_widget.dart';
+import 'package:yerlestirme_update/utility/widgets/advers_widget.dart';
 
 const boxConstraints = BoxConstraints(maxWidth: 450);
 const edgeInsets = EdgeInsets.symmetric(horizontal: 10);
@@ -32,9 +33,12 @@ class _AuthPageScreenState extends State<AuthPageScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (model.userExist) {
-      //Get.offAndToNamed<void>('/');
-    }
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        if (model.userExist) context.pushNamedAndRemoveAll('/home');
+      },
+    );
     return !model.userExist
         ? const AuthResponsive()
         : const Center(
@@ -100,6 +104,7 @@ class _AuthResponsiveState extends State<AuthResponsive>
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const BenBuradayim(),
                 DecoratedBox(
                   decoration: boxDecoration,
                   child: TabBar(
