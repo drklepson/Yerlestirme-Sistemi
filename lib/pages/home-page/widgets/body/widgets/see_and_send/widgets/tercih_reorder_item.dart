@@ -5,12 +5,12 @@ import 'package:yerlestirme_update/pages/home-page/widgets/body/tercih_list_mode
 
 class TercihReorderItem extends StatelessWidget {
   const TercihReorderItem({
-    super.key,
     required this.indexValue,
     required this.model,
     required this.index,
     required this.first,
     required this.last,
+    super.key,
   });
 
   final KadroModel indexValue;

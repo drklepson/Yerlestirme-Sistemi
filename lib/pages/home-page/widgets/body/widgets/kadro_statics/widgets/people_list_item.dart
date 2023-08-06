@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yerlestirme_update/models/user.dart';
 
 class PeopleListItem extends StatelessWidget {
-  const PeopleListItem({super.key, required this.user, required this.index});
+  const PeopleListItem({required this.user, required this.index, super.key});
 
   final UserModel user;
   final int index;

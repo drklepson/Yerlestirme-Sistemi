@@ -35,9 +35,9 @@ dependencies:
 
 
   # For Firebase Connections 
-  firebase_core: ^1.14.0
-  firebase_auth: ^3.11.2
-  firebase_database: ^9.0.12
+  firebase_core: ^2.13.1
+  firebase_auth: ^4.6.2
+  firebase_database: ^10.2.2
 
   # For Access Services
   get_it: ^7.2.0
@@ -48,7 +48,7 @@ dependencies:
   json_annotation: ^4.7.0
 
   # Widget
-  reorderables: ^0.4.4
+  reorderables: ^0.6.0
   
   # General Features
   # google_fonts: ^3.0.1
@@ -68,7 +68,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  very_good_analysis: ^3.1.0
+  very_good_analysis: ^5.0.0+1
 
 packages:
 

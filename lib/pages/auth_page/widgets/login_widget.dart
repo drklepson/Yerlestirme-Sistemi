@@ -8,7 +8,7 @@ const borderRadius2 = BorderRadius.vertical(bottom: Radius.circular(20));
 const String girisBaslikText = 'Giriş Yap';
 
 class GirisMainWidget extends StatelessWidget {
-  GirisMainWidget({super.key, required this.model});
+  GirisMainWidget({required this.model, super.key});
   final AuthPageModel model;
 
   final GlobalKey<FormState> _formKey = GlobalKey();

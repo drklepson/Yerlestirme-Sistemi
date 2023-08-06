@@ -7,7 +7,7 @@ import 'package:yerlestirme_update/pages/home-page/home_model.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/home_responsive.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/header/home_page_header.dart';
 
-const headerMainText = 'Türkiyenin ilk ve tek Sahu Tercih Platformu 2022/2';
+const headerMainText = 'Türkiyenin ilk ve tek Sahu Tercih Platformu 2023/1';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -40,9 +40,10 @@ class _HomePageState extends State<HomePage> {
               title: Text(
                 headerMainText,
                 textAlign: TextAlign.center,
-                style: ScreenController.isMobile(context)
-                    ? Theme.of(context).textTheme.titleMedium
-                    : Theme.of(context).textTheme.titleLarge,
+                style: (ScreenController.isMobile(context)
+                        ? Theme.of(context).textTheme.titleMedium
+                        : Theme.of(context).textTheme.titleLarge)
+                    ?.copyWith(color: context.colorScheme.onPrimary),
               ),
               bottom: PreferredSize(
                 preferredSize: Size(

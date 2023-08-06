@@ -22,14 +22,11 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     fetchDatas(context);
 
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: const [
-            CircularProgressIndicator(),
-            Text('Sistem Açılıyor')
-          ],
+          children: [CircularProgressIndicator(), Text('Sistem Açılıyor')],
         ),
       ),
     );

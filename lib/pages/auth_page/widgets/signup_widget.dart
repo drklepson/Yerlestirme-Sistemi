@@ -14,7 +14,7 @@ const boxDecoration =
     BoxDecoration(color: Colors.white, borderRadius: borderRadius2);
 
 class KayitMainWidget extends StatelessWidget {
-  KayitMainWidget({super.key, required this.model});
+  KayitMainWidget({required this.model, super.key});
   final AuthPageModel model;
 
   final GlobalKey<FormState> _formKey = GlobalKey();

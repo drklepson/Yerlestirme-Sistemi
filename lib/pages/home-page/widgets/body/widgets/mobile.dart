@@ -6,7 +6,7 @@ import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/kadro_st
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/see_and_send/tercih_gor_gonder.dart';
 
 class HomeMobileLayout extends StatefulWidget {
-  const HomeMobileLayout({super.key, required this.model});
+  const HomeMobileLayout({required this.model, super.key});
 
   final TercihListModel model;
 
@@ -32,7 +32,9 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout>
       children: [
         TabBar(
           unselectedLabelColor: context.colorScheme.primary,
+          labelColor: context.colorScheme.onPrimary,
           controller: _tabController,
+          indicatorSize: TabBarIndicatorSize.tab,
           indicator: BoxDecoration(color: context.colorScheme.primary),
           tabs: const [Text('Tercihlerim'), Text('Kadrolar')],
         ),

@@ -4,7 +4,7 @@ import 'package:yerlestirme_update/helpers/extensions/extension.dart';
 import 'package:yerlestirme_update/utility/widgets/generic_drop.dart';
 
 class SehirFormField extends StatelessWidget {
-  const SehirFormField({super.key, required this.controller});
+  const SehirFormField({required this.controller, super.key});
 
   final TextEditingController controller;
 

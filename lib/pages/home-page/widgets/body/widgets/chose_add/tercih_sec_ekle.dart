@@ -9,7 +9,7 @@ import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/chose_ad
 import 'package:yerlestirme_update/utility/widgets/generic_drop.dart';
 
 class TercihSecEkle extends StatefulWidget {
-  const TercihSecEkle({super.key, required this.model});
+  const TercihSecEkle({required this.model, super.key});
 
   final TercihListModel model;
 

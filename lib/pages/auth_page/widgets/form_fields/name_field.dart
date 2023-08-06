@@ -3,8 +3,8 @@ import 'package:yerlestirme_update/helpers/validators/validator.dart';
 
 class NameFormField extends StatelessWidget {
   const NameFormField({
-    super.key,
     required this.nameController,
+    super.key,
   });
 
   final TextEditingController nameController;

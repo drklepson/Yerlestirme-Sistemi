@@ -5,7 +5,7 @@ import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/kadro_st
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/see_and_send/tercih_gor_gonder.dart';
 
 class HomeTabletLayout extends StatelessWidget {
-  const HomeTabletLayout({super.key, required this.model});
+  const HomeTabletLayout({required this.model, super.key});
   final TercihListModel model;
 
   @override

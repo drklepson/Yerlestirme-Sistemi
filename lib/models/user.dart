@@ -6,10 +6,10 @@ part 'user.g.dart';
 @JsonSerializable()
 class UserModel {
   UserModel({
-    this.uid,
     required this.email,
     required this.name,
     required this.sehir,
+    this.uid,
     this.kazanilan,
     this.puan = 30.00,
     this.sira = 3000,

@@ -3,8 +3,8 @@ import 'package:yerlestirme_update/helpers/validators/validator.dart';
 
 class EmailFormField extends StatelessWidget {
   const EmailFormField({
-    super.key,
     required TextEditingController emailController,
+    super.key,
   }) : _emailController = emailController;
 
   final TextEditingController _emailController;

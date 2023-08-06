@@ -3,9 +3,9 @@ import 'package:yerlestirme_update/helpers/validators/validator.dart';
 
 class PasswordFormField extends StatelessWidget {
   PasswordFormField({
-    super.key,
     required TextEditingController passwordController,
     required this.onFieldSubmitted,
+    super.key,
   }) : _passwordController = passwordController;
 
   final obscuringCharacter2 = '✲';

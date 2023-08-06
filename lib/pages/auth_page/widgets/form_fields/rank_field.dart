@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yerlestirme_update/helpers/validators/validator.dart';
 
 class RankFormField extends StatelessWidget {
-  const RankFormField({super.key, required this.rankController});
+  const RankFormField({required this.rankController, super.key});
 
   final TextEditingController rankController;
 

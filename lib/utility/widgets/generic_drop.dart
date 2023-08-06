@@ -8,15 +8,15 @@ import 'package:yerlestirme_update/pages/home-page/widgets/header/home_page_head
 
 class GenericAutoCompDrop<T extends Object> extends StatelessWidget {
   GenericAutoCompDrop({
-    super.key,
     required this.onSelected,
-    this.onClearPressed,
     required this.itemView,
     required this.items,
     required this.toStringMethod,
+    required this.labelText,
+    super.key,
+    this.onClearPressed,
     this.errorText = 'Geçerli Bir Seçim Yapınız.',
     this.listWidth,
-    required this.labelText,
     this.controller,
   });
 
@@ -96,11 +96,11 @@ final borderRadius2 = BorderRadius.circular(10);
 
 class OptionViews<K extends Object> extends StatelessWidget {
   const OptionViews({
-    super.key,
     required this.onSelected,
     required this.liste,
     required this.itemView,
     required this.listWidth,
+    super.key,
   });
 
   final void Function(K) onSelected;
@@ -146,14 +146,14 @@ class OptionViews<K extends Object> extends StatelessWidget {
 
 class OptionFieldView extends StatelessWidget {
   const OptionFieldView({
-    super.key,
     required this.controller,
     required this.node,
+    required this.onEditingComplete,
+    super.key,
     this.onClearPressed,
     this.validator,
     this.prefixIcon = Icons.location_on_outlined,
     this.labelText = 'Kurum Adı',
-    required this.onEditingComplete,
   });
 
   final TextEditingController controller;

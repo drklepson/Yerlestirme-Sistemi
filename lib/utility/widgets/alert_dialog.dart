@@ -8,8 +8,8 @@ const edgeInsets = EdgeInsets.symmetric(vertical: 12, horizontal: 16);
 
 class CustomAlertDialog extends StatelessWidget {
   const CustomAlertDialog({
-    super.key,
     required this.titleText,
+    super.key,
     this.content,
     this.actions,
   });

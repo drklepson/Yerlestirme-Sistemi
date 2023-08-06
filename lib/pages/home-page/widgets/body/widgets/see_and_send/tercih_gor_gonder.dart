@@ -6,7 +6,7 @@ import 'package:yerlestirme_update/pages/home-page/widgets/body/tercih_list_mode
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/see_and_send/widgets/tercih_reorder_item.dart';
 
 class TercihGorGonder extends StatefulWidget {
-  const TercihGorGonder({super.key, required this.model});
+  const TercihGorGonder({required this.model, super.key});
 
   final TercihListModel model;
 

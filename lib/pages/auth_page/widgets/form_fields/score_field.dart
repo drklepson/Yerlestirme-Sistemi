@@ -3,7 +3,7 @@ import 'package:yerlestirme_update/helpers/formatters/formatter.dart';
 import 'package:yerlestirme_update/helpers/validators/validator.dart';
 
 class ScoreFormField extends StatelessWidget {
-  const ScoreFormField({super.key, required this.scoreController});
+  const ScoreFormField({required this.scoreController, super.key});
 
   final TextEditingController scoreController;
 

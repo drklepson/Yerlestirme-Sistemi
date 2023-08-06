@@ -9,10 +9,8 @@ part of 'kadro.dart';
 // **************************************************************************
 
 KadroModel _$KadroModelFromJson(Map<String, dynamic> json) => KadroModel(
-      sira: json['sira'] as int,
       sehir: json['sehir'] as String,
       kurum: json['kurum'] as String,
-      tur: json['tur'] as String,
       kontenjan: json['kontenjan'] as int,
       kadroId: json['uid'] as String,
       basvurabilen: (json['basvurabilen'] as List<dynamic>?)

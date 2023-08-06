@@ -4,12 +4,12 @@ import 'package:yerlestirme_update/pages/home-page/widgets/body/tercih_list_mode
 
 class TercihBilgiCard extends StatelessWidget {
   const TercihBilgiCard({
-    super.key,
-    this.seciliKadro,
     required this.width,
-    this.onAdded,
     required this.kadroUyari,
     required this.model,
+    super.key,
+    this.seciliKadro,
+    this.onAdded,
   });
 
   final KadroModel? seciliKadro;

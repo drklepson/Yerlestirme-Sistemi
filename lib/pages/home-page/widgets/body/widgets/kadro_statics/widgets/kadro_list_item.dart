@@ -8,10 +8,10 @@ import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/kadro_st
 
 class KadroListExpansionItem extends StatelessWidget {
   const KadroListExpansionItem({
-    super.key,
     required this.kazananlar,
     required this.gelenKadro,
     required this.tercihEdenler,
+    super.key,
   });
 
   final List<String?>? kazananlar;

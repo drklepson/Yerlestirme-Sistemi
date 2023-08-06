@@ -78,17 +78,12 @@ class _AuthResponsiveState extends State<AuthResponsive>
   @override
   Widget build(BuildContext context) {
     const tabs = [
-      Tab(child: Text('Giriş Yap')),
-      Tab(child: Text('Kayıt Ol')),
+      Tab(text: 'Giriş Yap'),
+      Tab(text: 'Kayıt Ol'),
     ];
-
     final views = [
-      GirisMainWidget(
-        model: authPageModel,
-      ),
-      KayitMainWidget(
-        model: authPageModel,
-      ),
+      GirisMainWidget(model: authPageModel),
+      KayitMainWidget(model: authPageModel),
     ];
     final boxDecoration = BoxDecoration(
       color: context.colorScheme.primary,
@@ -103,21 +98,22 @@ class _AuthResponsiveState extends State<AuthResponsive>
             padding: edgeInsets,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const BenBuradayim(),
                 DecoratedBox(
                   decoration: boxDecoration,
                   child: TabBar(
                     controller: _tabController,
-                    indicator:
-                        BoxDecoration(color: context.colorScheme.surface),
-                    unselectedLabelColor: context.colorScheme.surface,
+                    indicator: BoxDecoration(
+                      color: context.colorScheme.surface,
+                    ),
+                    unselectedLabelColor: context.colorScheme.onPrimary,
                     labelColor: context.colorScheme.primary,
                     tabs: tabs,
-                    labelStyle: context.textTheme.headlineMedium
-                        ?.copyWith(fontWeight: FontWeight.bold),
-                    unselectedLabelStyle: context.textTheme.bodyLarge
-                        ?.copyWith(fontWeight: FontWeight.bold),
+                    labelStyle: context.textTheme.headlineMedium?.bold,
+                    unselectedLabelStyle: context.textTheme.bodyLarge?.bold,
+                    indicatorSize: TabBarIndicatorSize.tab,
                   ),
                 ),
                 SizedBox(
