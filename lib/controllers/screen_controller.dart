@@ -1,5 +1,5 @@
+import 'package:drklepson_utility_package/drklepson_utility_package.dart';
 import 'package:flutter/material.dart';
-import 'package:yerlestirme_update/helpers/extensions/extension.dart';
 
 class ScreenController {
   static double pixelRatio(BuildContext context) =>

@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:yerlestirme_update/pages/home-page/widgets/body/tercih_list_model.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/chose_add/tercih_sec_ekle.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/kadro_statics/kadrolist_widget.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/see_and_send/tercih_gor_gonder.dart';
 
 class HomeDesktopLayout extends StatelessWidget {
-  const HomeDesktopLayout({required this.model, super.key});
-  final TercihListModel model;
+  const HomeDesktopLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (p0, sizes) => Row(
+      builder: (p0, sizes) => const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
@@ -19,12 +17,12 @@ class HomeDesktopLayout extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TercihSecEkle(model: model),
-                Expanded(child: TercihGorGonder(model: model)),
+                TercihSecEkle(),
+                Expanded(child: TercihGorGonder()),
               ],
             ),
           ),
-          const Expanded(child: KadroListWidget())
+          Expanded(child: KadroListWidget()),
         ],
       ),
     );

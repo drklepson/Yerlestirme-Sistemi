@@ -1,7 +1,7 @@
+import 'package:drklepson_utility_package/tools/dialog_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:yerlestirme_update/helpers/extensions/context_extension.g.dart';
 import 'package:yerlestirme_update/models/kadro.dart';
-import 'package:yerlestirme_update/pages/home-page/widgets/body/tercih_list_model.dart';
+import 'package:yerlestirme_update/pages/home-page/home_model.dart';
 
 class TercihReorderItem extends StatelessWidget {
   const TercihReorderItem({
@@ -15,7 +15,7 @@ class TercihReorderItem extends StatelessWidget {
 
   final KadroModel indexValue;
   final int index;
-  final TercihListModel model;
+  final HomePageModel model;
   final bool first;
   final bool last;
 
@@ -34,18 +34,21 @@ class TercihReorderItem extends StatelessWidget {
           children: [
             if (!last)
               InkWell(
-                onTap: () =>
-                    context.loading(model.tercihReorder(index, index + 2)),
+                onTap: () => DialogManager.futureLoading(
+                  model.tercihReorder(index, index + 2),
+                ),
                 child: const Icon(Icons.arrow_downward),
               ),
             if (!first)
               InkWell(
-                onTap: () =>
-                    context.loading(model.tercihReorder(index, index - 1)),
+                onTap: () => DialogManager.futureLoading(
+                  model.tercihReorder(index, index - 1),
+                ),
                 child: const Icon(Icons.arrow_upward),
               ),
             InkWell(
-              onTap: () => context.loading(model.tercihSilme(index)),
+              onTap: () =>
+                  DialogManager.futureLoading(model.tercihSilme(index)),
               child: const Icon(Icons.delete),
             ),
           ],

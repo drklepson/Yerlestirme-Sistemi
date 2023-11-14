@@ -1,0 +1,74 @@
+// ignore_for_file: public_member_api_docs
+
+import 'package:flutter/material.dart';
+
+class CustomColors {
+  static const smuddyLightLight50 = Color(0xffffffff);
+  static const smuddyLightLight300 = Color(0xfff2f2f2);
+  static const smuddyLightLight100 = Color(0xfff9f9f9);
+  static const smuddyLightLight200 = Color(0xfff6f6f6);
+  static const smuddyLightLight600 = Color(0xffd6d6d6);
+  static const smuddyLightLight700 = Color(0xffa7a7a7);
+  static const smuddyLightLight800 = Color(0xff818181);
+  static const smuddyLightLight900 = Color(0xff636363);
+  static const smuddyDarkDark50 = Color(0xffebebeb);
+  static const smuddyDarkDark200 = Color(0xffa1a1a1);
+  static const smuddyDarkDark100 = Color(0xffc0c0c0);
+  static const smuddyDarkDark300 = Color(0xff767676);
+  static const smuddyDarkDark400 = Color(0xff5c5c5c);
+  static const smuddyLightLight500 = Color(0xffebebeb);
+  static const smuddyDarkDark500 = Color(0xff333333);
+  static const smuddyLightLight400 = Color(0xffefefef);
+  static const smuddyDarkDark600 = Color(0xff2e2e2e);
+  static const smuddyDarkDark700 = Color(0xff242424);
+  static const smuddyDarkDark800 = Color(0xff1c1c1c);
+  static const smuddyDarkDark900 = Color(0xff151515);
+  static const smuddyGreenGreen100 = Color(0xffd0f5e2);
+  static const smuddyGreenGreen50 = Color(0xfff0fcf6);
+  static const smuddyGreenGreen200 = Color(0xffb9f0d4);
+  static const smuddyGreenGreen300 = Color(0xff99eac0);
+  static const smuddyGreenGreen500 = Color(0xff67dfa1);
+  static const smuddyGreenGreen400 = Color(0xff85e5b4);
+  static const smuddyGreenGreen600 = Color(0xff5ecb93);
+  static const smuddyGreenGreen700 = Color(0xff499e72);
+  static const smuddyGreenGreen800 = Color(0xff397b59);
+  static const smuddyGreenGreen900 = Color(0xff2b5e44);
+  static const smuddyPinkPink100 = Color(0xfff7c2d5);
+  static const smuddyPinkPink50 = Color(0xfffcebf2);
+  static const smuddyPinkPink200 = Color(0xfff3a5c1);
+  static const smuddyPinkPink300 = Color(0xffed7ca5);
+  static const smuddyPinkPink400 = Color(0xffe96293);
+  static const smuddyPinkPink500 = Color(0xffe43b78);
+  static const smuddyPinkPink600 = Color(0xffcf366d);
+  static const smuddyPinkPink800 = Color(0xff7d2042);
+  static const smuddyPinkPink700 = Color(0xffa22a55);
+  static const smuddyPurplePurple50 = Color(0xfff5effe);
+  static const smuddyPinkPink900 = Color(0xff601932);
+  static const smuddyPurplePurple100 = Color(0xffe0cefd);
+  static const smuddyPurplePurple200 = Color(0xffd1b7fc);
+  static const smuddyPurplePurple400 = Color(0xffae81f9);
+  static const smuddyPurplePurple300 = Color(0xffbb96fa);
+  static const smuddyPurplePurple500 = Color(0xff9a62f8);
+  static const smuddyPurplePurple600 = Color(0xff8c59e2);
+  static const smuddyPurplePurple700 = Color(0xff6d46b0);
+  static const smuddyPurplePurple800 = Color(0xff553688);
+  static const smuddyPurplePurple900 = Color(0xff412968);
+  static const smuddyEssentialsError = Color(0xffb11025);
+  static const smuddyEssentialsSuccess = Color(0xff6aa91b);
+  static const smuddyEssentialsInfo = Color(0xff0061bb);
+  static const smuddyEssentialsWarning = Color(0xffefa332);
+  static const lightDivider = Color(0xffdddfe3);
+  static const lightPlaceholderText260 = Color(0x9939394c);
+  static const lightText1 = Color(0xff050505);
+  static const lightText2 = Color(0xff39394c);
+  static const lightPrimary = Color(0xffffffff);
+  static const lightInk = Color(0xff000000);
+  static const lightSecondary =
+      Color.fromRGBO(0, 23, 56, 1); // Color(0xffaeb3be);
+  static const lightBackground1 = Color(0xffffffff);
+  static const bisEssentialsError = Color(0xffca0000);
+  static const bisBlueBisBlue500 = Color(0xff2e40f1);
+  static const bisEssentialsWhite = Color(0xffffffff);
+  static const bisEssentialsDisable = Color(0xffb0b9c1);
+  static const bisEssentialsDisableBackground = Color(0xffeceef0);
+}

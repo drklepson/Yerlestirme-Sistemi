@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yerlestirme_update/controllers/auth_controller.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/kadro_statics/widgets/kadro_list_item.dart';
 
@@ -7,8 +8,7 @@ class KadroListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<AuthController>(
-      valueListenable: AuthController(),
+    return Consumer<AuthController>(
       builder: (context, value, child) {
         final kadroList = value.firstKadroList;
         return Card(

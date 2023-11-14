@@ -1,5 +1,5 @@
+import 'package:drklepson_utility_package/validators/validator.dart';
 import 'package:flutter/material.dart';
-import 'package:yerlestirme_update/helpers/validators/validator.dart';
 
 class RankFormField extends StatelessWidget {
   const RankFormField({required this.rankController, super.key});
@@ -13,7 +13,11 @@ class RankFormField extends StatelessWidget {
         labelText: 'Sıralama',
         prefixIcon: Icon(Icons.looks_two_outlined),
       ),
-      validator: CustomValidator.siralama,
+      validator: (value) => CustomValidator.number(
+        value,
+        min: 1,
+        max: 2281,
+      ),
       autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: rankController,
     );

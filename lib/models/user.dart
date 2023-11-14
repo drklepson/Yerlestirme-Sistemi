@@ -1,5 +1,5 @@
-import 'package:firebase_database/firebase_database.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:yerlestirme_update/service/data_service.dart';
 
 part 'user.g.dart';
 
@@ -15,10 +15,6 @@ class UserModel {
     this.sira = 3000,
     this.tercihList,
   });
-  //     {
-  //   tercihValueList.value = tercihList ?? <String>[];
-  //   tercihValueList.notifyListeners();
-  // }
 
   factory UserModel.fromJson(Map<String, dynamic> map) =>
       _$UserModelFromJson(map);
@@ -32,15 +28,9 @@ class UserModel {
   final int sira;
   List<String?>? tercihList;
 
-  Future<void> tercihGonder() async {
-    if (uid != null) {
-      await FirebaseDatabase.instance
-          .ref('users')
-          .child(uid!)
-          .child('tercihler')
-          .set(tercihList);
-    }
-  }
+  Future<void> sendTercih() => DataService.sendTercih(this);
+
+  Future<void> createOnDb() => DataService.createUser(this);
 
   Map<String, dynamic> toJson() => _$UserModelToJson(this);
 }

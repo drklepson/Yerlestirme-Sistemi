@@ -1,14 +1,12 @@
+import 'package:drklepson_utility_package/drklepson_utility_package.dart';
 import 'package:flutter/material.dart';
-import 'package:yerlestirme_update/helpers/extensions/context_extension.g.dart';
-import 'package:yerlestirme_update/pages/home-page/widgets/body/tercih_list_model.dart';
+import 'package:yerlestirme_update/pages/home-page/home_model.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/chose_add/tercih_sec_ekle.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/kadro_statics/kadrolist_widget.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/see_and_send/tercih_gor_gonder.dart';
 
 class HomeMobileLayout extends StatefulWidget {
-  const HomeMobileLayout({required this.model, super.key});
-
-  final TercihListModel model;
+  const HomeMobileLayout({super.key});
 
   @override
   State<HomeMobileLayout> createState() => _HomeMobileLayoutState();
@@ -17,11 +15,10 @@ class HomeMobileLayout extends StatefulWidget {
 class _HomeMobileLayoutState extends State<HomeMobileLayout>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  late final TercihListModel model;
+  late final HomePageModel model;
 
   @override
   void initState() {
-    model = widget.model;
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
   }
@@ -41,14 +38,14 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout>
         Expanded(
           child: TabBarView(
             controller: _tabController,
-            children: [
+            children: const [
               Column(
                 children: [
-                  TercihSecEkle(model: model),
-                  Expanded(child: TercihGorGonder(model: model)),
+                  TercihSecEkle(),
+                  Expanded(child: TercihGorGonder()),
                 ],
               ),
-              const KadroListWidget(),
+              KadroListWidget(),
             ],
           ),
         ),

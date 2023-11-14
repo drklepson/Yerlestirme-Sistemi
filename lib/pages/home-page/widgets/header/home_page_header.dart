@@ -1,25 +1,15 @@
 // ignore_for_file: unused_local_variable
 
+import 'package:drklepson_utility_package/drklepson_utility_package.dart';
+import 'package:drklepson_utility_package/tools/dialog_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yerlestirme_update/const/default_strings.dart';
 import 'package:yerlestirme_update/controllers/auth_controller.dart';
 import 'package:yerlestirme_update/controllers/screen_controller.dart';
-import 'package:yerlestirme_update/helpers/extensions/extension.dart';
 import 'package:yerlestirme_update/models/kadro.dart';
 import 'package:yerlestirme_update/models/user.dart';
-import 'package:yerlestirme_update/pages/home-page/widgets/header/widgets/city_code.dart';
-
-extension ForListWhereNull<T> on List<T> {
-  T? firstWhereNull(bool Function(T element) rule) {
-    if (isEmpty) return null;
-    for (final i in this) {
-      if (rule.call(i)) {
-        return i;
-      }
-    }
-    return null;
-  }
-}
+import 'package:yerlestirme_update/pages/home-page/widgets/header/city_code.dart';
 
 class HomePageHeader extends StatelessWidget {
   const HomePageHeader({super.key});
@@ -30,8 +20,7 @@ class HomePageHeader extends StatelessWidget {
       constraints: const BoxConstraints(maxWidth: 960),
       height: ScreenController.isMobile(context) ? 96 : 136,
       padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: ValueListenableBuilder<AuthController>(
-        valueListenable: AuthController(),
+      child: Consumer<AuthController>(
         builder: (_, value, __) => _HomePageHeader(user: value.firestoreUser),
       ),
     );
@@ -59,8 +48,7 @@ class _HomePageHeader extends StatelessWidget {
           : Theme.of(context).textTheme.displaySmall,
     );
 
-    final kazanilanValueListenable = ValueListenableBuilder<AuthController>(
-      valueListenable: AuthController(),
+    final kazanilanValueListenable = Consumer<AuthController>(
       builder: (context, value, child) {
         final kadroList = value.firstKadroList ?? <KadroModel?>[];
 
@@ -118,9 +106,9 @@ class _HomePageHeader extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () => context
-                .loading(AuthController().signOut(context))
-                .then((_) => context.pushNamedAndRemoveAll('/')),
+            onPressed: () =>
+                DialogManager.futureLoading(AuthController().signOut(context))
+                    .then((_) => context.pushNamedAndRemoveAll('/')),
             icon: Icon(
               Icons.exit_to_app_outlined,
               color: context.colorScheme.onPrimary,

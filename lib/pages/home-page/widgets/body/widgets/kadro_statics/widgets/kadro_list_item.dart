@@ -1,10 +1,10 @@
+import 'package:drklepson_utility_package/drklepson_utility_package.dart';
 import 'package:flutter/material.dart';
-import 'package:yerlestirme_update/controllers/auth_controller.dart';
-import 'package:yerlestirme_update/helpers/global_variables.dart';
 import 'package:yerlestirme_update/models/kadro.dart';
 import 'package:yerlestirme_update/models/user.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/kadro_statics/widgets/people_list_header.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/kadro_statics/widgets/people_list_item.dart';
+import 'package:yerlestirme_update/service/data_service.dart';
 
 class KadroListExpansionItem extends StatelessWidget {
   const KadroListExpansionItem({
@@ -45,12 +45,12 @@ class KadroListExpansionItem extends StatelessWidget {
 
             return kazanan != null
                 ? FutureBuilder<UserModel?>(
-                    future: AuthController().getUserWithID(kazanan),
+                    future: DataService.getUserWithID(kazanan),
                     builder: (context, snapshot) =>
-                        Globals.futureBuilderWidget<UserModel?>(
+                        Utility.futureBuilderWidget<UserModel?>(
                       context,
                       snapshot,
-                      (data) => data != null
+                      (_, data) => data != null
                           ? PeopleListItem(
                               user: data,
                               index: kazanSira + 1,
@@ -74,12 +74,12 @@ class KadroListExpansionItem extends StatelessWidget {
             final tercihEden = tercihEdenler?.elementAt(tercihSira);
             if (tercihEden == null) return const SizedBox.shrink();
             return FutureBuilder<UserModel?>(
-              future: AuthController().getUserWithID(tercihEden),
+              future: DataService.getUserWithID(tercihEden),
               builder: (context, snapshot) =>
-                  Globals.futureBuilderWidget<UserModel?>(
+                  Utility.futureBuilderWidget<UserModel?>(
                 context,
                 snapshot,
-                (data) => data != null
+                (_, data) => data != null
                     ? PeopleListItem(
                         user: data,
                         index: tercihSira + 1 + (kazananlar?.length ?? 0),

@@ -1,6 +1,5 @@
+import 'package:drklepson_utility_package/drklepson_utility_package.dart';
 import 'package:flutter/material.dart';
-import 'package:yerlestirme_update/helpers/formatters/formatter.dart';
-import 'package:yerlestirme_update/helpers/validators/validator.dart';
 
 class ScoreFormField extends StatelessWidget {
   const ScoreFormField({required this.scoreController, super.key});
@@ -14,8 +13,12 @@ class ScoreFormField extends StatelessWidget {
         labelText: 'A Puanı',
         prefixIcon: Icon(Icons.font_download_outlined),
       ),
-      inputFormatters: [CustomFormatters.aPuani],
-      validator: CustomValidator.aPuani,
+      inputFormatters: [CustomFormatters.score],
+      validator: (value) => CustomValidator.number(
+        value,
+        min: 30,
+        max: 85,
+      ),
       autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: scoreController,
     );

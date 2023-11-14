@@ -1,14 +1,13 @@
+import 'package:drklepson_utility_package/tools/dialog_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yerlestirme_update/controllers/auth_controller.dart';
-import 'package:yerlestirme_update/helpers/extensions/context_extension.g.dart';
 import 'package:yerlestirme_update/models/kadro.dart';
-import 'package:yerlestirme_update/pages/home-page/widgets/body/tercih_list_model.dart';
+import 'package:yerlestirme_update/pages/home-page/home_model.dart';
 import 'package:yerlestirme_update/pages/home-page/widgets/body/widgets/see_and_send/widgets/tercih_reorder_item.dart';
 
 class TercihGorGonder extends StatefulWidget {
-  const TercihGorGonder({required this.model, super.key});
-
-  final TercihListModel model;
+  const TercihGorGonder({super.key});
 
   @override
   State<TercihGorGonder> createState() => _TercihGorGonderState();
@@ -16,35 +15,25 @@ class TercihGorGonder extends StatefulWidget {
 
 class _TercihGorGonderState extends State<TercihGorGonder>
     with AutomaticKeepAliveClientMixin {
-  late TercihListModel model;
-
-  @override
-  void initState() {
-    model = widget.model;
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     super.build(context);
     return Card(
       child: Container(
         padding: const EdgeInsets.all(12),
-        child: ValueListenableBuilder<AuthController>(
-          valueListenable: AuthController(),
+        child: Consumer<AuthController>(
           builder: (context, value, child) {
             final kadroList = value.firstKadroList ?? <KadroModel>[];
 
-            return ValueListenableBuilder<List<String?>>(
-              valueListenable: model,
-              builder: (context, value, child) => ReorderableListView.builder(
+            return Consumer<HomePageModel>(
+              builder: (context, model, child) => ReorderableListView.builder(
                 key: GlobalKey(),
                 shrinkWrap: true,
-                itemCount: value.length,
+                itemCount: model.tercihValueList.length,
                 buildDefaultDragHandles: false,
                 itemBuilder: (context, index) {
                   final kadro = kadroList.firstWhere(
-                    (e) => e.kadroId == value.elementAt(index),
+                    (e) => e.kadroId == model.tercihValueList[index],
                   );
                   return TercihReorderItem(
                     key: ValueKey(kadro),
@@ -52,11 +41,12 @@ class _TercihGorGonderState extends State<TercihGorGonder>
                     model: model,
                     index: index,
                     first: index == 0,
-                    last: index == (value.length - 1),
+                    last: index == (model.tercihValueList.length - 1),
                   );
                 },
-                onReorder: (oldIndex, newIndex) =>
-                    context.loading(model.tercihReorder(oldIndex, newIndex)),
+                onReorder: (oldIndex, newIndex) => DialogManager.futureLoading(
+                  model.tercihReorder(oldIndex, newIndex),
+                ),
               ),
             );
           },

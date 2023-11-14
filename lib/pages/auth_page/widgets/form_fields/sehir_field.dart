@@ -1,7 +1,6 @@
+import 'package:drklepson_utility_package/drklepson_utility_package.dart';
 import 'package:flutter/material.dart';
 import 'package:yerlestirme_update/const/iller.dart';
-import 'package:yerlestirme_update/helpers/extensions/extension.dart';
-import 'package:yerlestirme_update/utility/widgets/generic_drop.dart';
 
 class SehirFormField extends StatelessWidget {
   const SehirFormField({required this.controller, super.key});
@@ -13,7 +12,7 @@ class SehirFormField extends StatelessWidget {
     return GenericAutoCompDrop<String>(
       labelText: 'Şehir',
       itemView: Text.new,
-      items: illerListesi.values.toList(),
+      items: iller.values.map((e) => e['name']!),
       toStringMethod: (item) => item,
       onSelected: (item) {
         controller.value = TextEditingValue(text: item);
