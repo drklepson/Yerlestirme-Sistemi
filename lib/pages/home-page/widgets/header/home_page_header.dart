@@ -1,7 +1,6 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:drklepson_utility_package/drklepson_utility_package.dart';
-import 'package:drklepson_utility_package/tools/dialog_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yerlestirme_update/const/default_strings.dart';

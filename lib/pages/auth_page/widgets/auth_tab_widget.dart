@@ -25,7 +25,10 @@ class AuthTabWidget extends StatelessWidget {
         decoration: authBoxDecoration,
         padding: CustomInsets.h12v16,
         child: SingleChildScrollView(
-          child: Form(child: Column(children: children)),
+          child: Form(
+            key: formKey,
+            child: Column(children: children),
+          ),
         ),
       ),
     );

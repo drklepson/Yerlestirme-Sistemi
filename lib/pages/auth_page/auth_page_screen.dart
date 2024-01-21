@@ -33,9 +33,10 @@ class AuthPageScreen extends StatelessWidget {
           SignupTabView(model: model),
         ];
 
+        const borderRadius = BorderRadius.vertical(top: Radius.circular(20));
         final boxDecoration2 = BoxDecoration(
           color: context.colorScheme.primary,
-          borderRadius: borderRadius2,
+          borderRadius: borderRadius,
         );
 
         return Scaffold(

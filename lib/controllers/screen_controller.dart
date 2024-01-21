@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 class ScreenController {
   static double pixelRatio(BuildContext context) =>
       MediaQuery.of(context).devicePixelRatio;
-  static double textScaleFactor(BuildContext context) =>
-      MediaQuery.of(context).textScaleFactor;
 
   static bool isMobile(BuildContext context) =>
       MediaQuery.of(context).size.width < 600;

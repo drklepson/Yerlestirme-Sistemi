@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:drklepson_utility_package/drklepson_utility_package.dart'
     hide ContextNavigator;
-import 'package:drklepson_utility_package/tools/dialog_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:yerlestirme_update/const/default_strings.dart';
@@ -75,10 +74,7 @@ class AuthPageModel {
                   style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
               ],
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-              ),
+              style: const TextStyle(color: Colors.black, fontSize: 16),
             ),
           ),
           actions: [
@@ -144,7 +140,10 @@ class AuthPageModel {
   Future<void> registerFunction() async {
     final puan = double.tryParse(scoreController.text);
     final sira = int.tryParse(rankController.text);
-    if (puan == null || sira == null) return;
+    if (puan == null || sira == null) {
+      unawaited(errorToast('Lütfen Puan ve Sıra Alanlarını Doldurunuz'));
+      return;
+    }
     if ((registerFormKey.currentState?.validate() ?? false) &&
         emailController.text.isNotEmpty &&
         passwordController.text.isNotEmpty &&
@@ -162,6 +161,8 @@ class AuthPageModel {
       ).onError(
         (error, stackTrace) => errorToast(error.toString()),
       );
-    } else {}
+    } else {
+      unawaited(errorToast('Lütfen Tüm Alanları Doldurunuz'));
+    }
   }
 }

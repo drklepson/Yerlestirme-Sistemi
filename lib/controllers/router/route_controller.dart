@@ -28,19 +28,25 @@ class RouterController {
       final authController = context.read<AuthController>();
       final userNotExist = authController.firestoreUser == null;
 
-      if (state.uri.path == '/' && authController.initialized) {
-        return PagesEnum.home.accessPath;
+      if (!authController.initialized) {
+        if (state.fullPath == '/') {
+          return null;
+        }
+        return PagesEnum.splash.accessPath;
       }
 
-      if (state.uri.path == '/home' && userNotExist) {
+      if (userNotExist) {
+        if (state.uri.path == '/login') {
+          return null;
+        }
         return PagesEnum.login.accessPath;
       }
 
-      if (state.uri.path == '/login' && !userNotExist) {
-        return PagesEnum.home.accessPath;
+      if (state.uri.path == '/home') {
+        return null;
       }
 
-      return null;
+      return PagesEnum.home.accessPath;
     },
   );
 

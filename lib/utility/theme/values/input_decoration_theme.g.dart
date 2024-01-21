@@ -4,7 +4,7 @@ class _CustomInputDecoration extends InputDecorationTheme {
   _CustomInputDecoration(this.scheme)
       : super(
           isDense: true,
-          isCollapsed: true,
+          isCollapsed: false,
           contentPadding: const EdgeInsets.only(
             left: 16,
             right: 16,
